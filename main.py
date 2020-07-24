@@ -4,12 +4,10 @@ Paula Camila Gonzalez Ortega
 """
 from gl import Render
 
-posX = 250
-posY = 250
 width = 1000
 height = 1000
 
-bitmap = Render(width, height) #los ultimos tres son los colores son los del background
+bitmap = Render(width, height) 
 
 bitmap.glClearColor(0, 0, 0) #este es background color
 bitmap.glclear()

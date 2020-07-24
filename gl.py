@@ -135,6 +135,7 @@ class Render(object):
 
 	#Funciones para checkear que un punto este dentro del poligono 
 	def inside(self, poly, x, y):
+		#Funcion basada en https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule
 		num = len(poly)
 		i = 0
 		j = num - 1
@@ -148,14 +149,13 @@ class Render(object):
 		return c
 
 	def filling(self, arr, poly):
-	    # Initialize maximum element
 	    arr_x = []
 	    arr_y = []
 	    for i in arr:
+	    	#se dividen las coordenadas de x y y segun la posicion en la lista
 	    	position = arr.index(i)
 	    	if position%2 == 0:
 	    		arr_x.append(i)
-	    		print(i)
 	    	else:
 	    		arr_y.append(i)
 	    xmax = max(arr_x) 
@@ -165,5 +165,6 @@ class Render(object):
 	    for x in range(xmin, xmax):
 	    	for y in range(ymin, ymax):
 	    		if self.inside(poly,x,y):
+	    			#si el punto esta dentro del poligono se dibuja el punto
 	    			self.glLinePoint(x,y)
 
