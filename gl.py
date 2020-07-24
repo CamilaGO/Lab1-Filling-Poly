@@ -133,6 +133,14 @@ class Render(object):
 
 		f.close()
 
+	#Funcion para dibujar un poly de varios lados
+	def drawPolygon(self, points):
+		n = len(points)
+		for i in range(n):
+			v0 = points[i]
+			v1 = points[(i+1)%n]
+			self.glLine(v0[0], v0[1], v1[0], v1[1])
+
 	#Funciones para checkear que un punto este dentro del poligono 
 	def inside(self, poly, x, y):
 		#Funcion basada en https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule
@@ -148,12 +156,22 @@ class Render(object):
 
 		return c
 
-	def filling(self, arr, poly):
+	def filling(self, poly):
 	    arr_x = []
 	    arr_y = []
-	    for i in arr:
+	    puntos = []
+	    n = len(poly)
+	    for i in range(n):
+	    	v0 = poly[i]
+	    	v1 = poly[(i+1)%n]
+	    	puntos.append(v0[0])
+	    	puntos.append(v0[1])
+	    	puntos.append(v1[0])
+	    	puntos.append(v1[1])
+
+	    for i in puntos:
 	    	#se dividen las coordenadas de x y y segun la posicion en la lista
-	    	position = arr.index(i)
+	    	position = puntos.index(i)
 	    	if position%2 == 0:
 	    		arr_x.append(i)
 	    	else:

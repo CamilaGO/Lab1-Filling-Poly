@@ -11,29 +11,9 @@ bitmap = Render(width, height)
 
 bitmap.glClearColor(0, 0, 0) #este es background color
 bitmap.glclear()
-bitmap.glColor(0, 1, 1) #estos colores son los que se usaran para pintar 
+bitmap.glColor(1, 0.5, 0) #estos colores son los que se usaran para pintar 
 
 #POLY 1
-bitmap.glLine(165, 380, 185, 360)
-bitmap.glLine(185, 360, 180, 330)
-bitmap.glLine(180, 330, 207, 345)
-bitmap.glLine(207, 345, 233, 330)
-bitmap.glLine(233, 330, 230, 360)
-bitmap.glLine(230, 360, 250, 380)
-bitmap.glLine(250, 380, 220, 385)
-bitmap.glLine(220, 385, 205, 410)
-bitmap.glLine(205, 410, 193, 383)
-bitmap.glLine(193, 383, 165, 380)
-arr = [165, 380, 185, 360, 
-185, 360, 180, 330,
-180, 330, 207, 345,
-207, 345, 233, 330, 
-233, 330, 230, 360,
-230, 360, 250, 380,
-250, 380, 220, 385,
-220, 385, 205, 410,
-205, 410, 193, 383,
-193, 383, 165, 380]
 poly = [(165, 380), (185, 360), 
 (185, 360), (180, 330),
 (180, 330), (207, 345),
@@ -44,75 +24,28 @@ poly = [(165, 380), (185, 360),
 (220, 385), (205, 410),
 (205, 410), (193, 383),
 (193, 383), (165, 380)]
-bitmap.filling(arr, poly)
+bitmap.drawPolygon(poly)
+bitmap.filling(poly)
 
 #POLY 2
-bitmap.glColor(1, 0, 1)
-bitmap.glLine(321, 335, 288, 286)
-bitmap.glLine(288, 286, 339, 251)
-bitmap.glLine(339, 251, 374, 302)
-bitmap.glLine(374, 302, 321, 335)
-arr = [321, 335, 288, 286,
-288, 286, 339, 251,
-339, 251, 374, 302,
-374, 302, 321, 335]
+bitmap.glColor(0.5, 0, 1)
 poly = [(321, 335), (288, 286),
 (288, 286), (339, 251),
 (339, 251), (374, 302),
 (374, 302), (321, 335)]
-bitmap.filling(arr, poly)
+bitmap.drawPolygon(poly)
+bitmap.filling(poly)
 
 #POLY 3
-bitmap.glColor(0, 1, 1)
-bitmap.glLine(377, 249, 411, 197)
-bitmap.glLine(411, 197, 436, 249)
-bitmap.glLine(436, 249, 377, 249)
-arr = [377, 249, 411, 197,
-411, 197, 436, 249,
-436, 249, 377, 249]
+bitmap.glColor(0, 0.5, 0.5)
 poly = [(377, 249), (411, 197),
 (411, 197), (436, 249),
 (436, 249), (377, 249)]
-bitmap.filling(arr, poly)
+bitmap.drawPolygon(poly)
+bitmap.filling(poly)
 
 #POLY 4
 bitmap.glColor(1, 1, 1)
-bitmap.glLine(413, 177, 448, 159)
-bitmap.glLine(448, 159, 502, 88)
-bitmap.glLine(502, 88, 553, 53)
-bitmap.glLine(553, 53, 535, 36)
-bitmap.glLine(535, 36, 676, 37)
-bitmap.glLine(676, 37, 660, 52)
-bitmap.glLine(660, 52, 750, 145)
-bitmap.glLine(750, 145, 761, 179)
-bitmap.glLine(761, 179, 672, 192)
-bitmap.glLine(672, 192, 659, 214)
-bitmap.glLine(659, 214, 615, 214)
-bitmap.glLine(615, 214, 632, 230)
-bitmap.glLine(632, 230, 580, 230)
-bitmap.glLine(580, 230, 597, 215)
-bitmap.glLine(597, 215, 552, 214)
-bitmap.glLine(552, 214, 517, 144)
-bitmap.glLine(517, 144, 466, 180)
-bitmap.glLine(413, 177, 466, 180)
-arr = [413, 177, 448, 159,
-448, 159, 502, 88,
-502, 88, 553, 53,
-553, 53, 535, 36,
-535, 36, 676, 37,
-676, 37, 660, 52,
-660, 52, 750, 145,
-750, 145, 761, 179,
-761, 179, 672, 192,
-672, 192, 659, 214,
-659, 214, 615, 214,
-615, 214, 632, 230,
-632, 230, 580, 230,
-580, 230, 597, 215,
-597, 215, 552, 214,
-552, 214, 517, 144,
-517, 144, 466, 180,
-413, 177, 466, 180]
 poly = [(413, 177), (448, 159),
 (448, 159), (502, 88),
 (502, 88), (553, 53),
@@ -131,23 +64,17 @@ poly = [(413, 177), (448, 159),
 (552, 214), (517, 144),
 (517, 144), (466, 180),
 (413, 177), (466, 180)]
-bitmap.filling(arr, poly)
+bitmap.drawPolygon(poly)
+bitmap.filling(poly)
 
 #POLY 5
 bitmap.glColor(0, 0, 0)
-bitmap.glLine(682, 175, 708, 120)
-bitmap.glLine(708, 120, 735, 148)
-bitmap.glLine(735, 148, 739, 170)
-bitmap.glLine(739, 170, 682, 175)
-arr = [682, 175, 708, 120,
-708, 120, 735, 148,
-735, 148, 739, 170,
-739, 170, 682, 175]
 poly = [(682, 175), (708, 120),
 (708, 120), (735, 148),
 (735, 148), (739, 170),
 (739, 170), (682, 175)]
-bitmap.filling(arr, poly)
+bitmap.drawPolygon(poly)
+bitmap.filling(poly)
 
 
-bitmap.finish('fillingpoly.bmp')
+bitmap.finish('outfilled.bmp')
