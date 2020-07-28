@@ -143,7 +143,12 @@ class Render(object):
 
 	#Funciones para checkear que un punto este dentro del poligono 
 	def inside(self, poly, x, y):
-		#Funcion basada en https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule
+		#Algoritmo Even–odd rule basado en https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule
+		# Primero se verifica que la Y del punto esté entre las y de cada par de vértices del poly
+		# Luego se calcula la x con la coordenada y de la línea que se hace con cada par de vértices del poly
+		# y verfica si esa x es mayor que la X del punto
+		# Si cumple ambas condiciones cambia el valor boolean de c
+		# Finalmente tal como lo dice el nombre del algoritmo "Even–odd rule", si se cumplen estas condiciones un número par de veces está afuera y si es impar está dentro del poly y se puede dibujar
 		num = len(poly)
 		i = 0
 		j = num - 1
